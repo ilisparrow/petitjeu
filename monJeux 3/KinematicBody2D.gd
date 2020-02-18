@@ -18,10 +18,10 @@ func _input(event):
 		$Sprite.flip_v=!lebool
 		$Camera2D.rotation_degrees=180
 		lebool=!lebool
-	if Input.is_key_pressed(KEY_Q):
-		GRAVITY=0
-	if Input.is_key_pressed(KEY_A):
-		GRAVITY=20
+	#if Input.is_key_pressed(KEY_Q):
+	#	GRAVITY=0
+	#if Input.is_key_pressed(KEY_A):
+	#	GRAVITY=20
 		
 func _physics_process(delta):
 	var glisse=get_parent().get_node("glisse")
