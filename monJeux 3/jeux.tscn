@@ -7,13 +7,16 @@
 [ext_resource path="res://boiteUne.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.7419, 30.8392 )
+extents = Vector2( 31.894, 31.3632 )
 
 [node name="jeux" type="Node"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 201.519, 294.023 )
-mode = 2
+position = Vector2( 179.519, 109.023 )
+rotation = -0.549779
+mass = 0.102041
+can_sleep = false
+linear_damp = 1.0
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
@@ -24,10 +27,11 @@ normal_map = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 291.231, 85.7134 )
+position = Vector2( 340.212, 27.7134 )
 
 [node name="Area2D LVL1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4256.39, 522.426 )
+priority = 1.0
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( 62.0134, 16.8077 )
