@@ -7,7 +7,7 @@
 [node name="jeux" type="Node"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 291.231, 85.7134 )
+position = Vector2( 226.231, 106.713 )
 
 [node name="Area2D LVL1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4256.39, 522.426 )
