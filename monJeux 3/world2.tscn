@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://dirtAutoTile.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene.gd" type="Script" id=3]
+[ext_resource path="res://scene.tscn" type="PackedScene" id=4]
+
+[node name="world2" type="Node"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 62.5, 154.67 )
+
+[node name="Area2D LVL2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 517.269, 263.088 )
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 6, -65536, 0, 196609, -65535, 0, 196609, -65534, 0, 196609, -65533, 0, 196609, -65532, 0, 196609, -65531, 0, 196609, -65530, 0, 196609, -65529, 0, 196609, -65528, 0, 196609, -65527, 0, 196609, -65526, 0, 7, 65535, 0, 65541, 10, 0, 65541, 131071, 0, 65541, 65540, 0, 196608, 65541, 0, 196610, 65546, 0, 65541, 196607, 0, 65541, 131082, 0, 65541, 262143, 0, 65541, 196618, 0, 65541, 327679, 0, 65541, 262146, 0, 1, 262147, 0, 2, 262150, 0, 196608, 262151, 0, 196610, 262154, 0, 65541, 393215, 0, 8, 327680, 0, 65536, 327681, 0, 65536, 327682, 0, 65540, 327683, 0, 131074, 327690, 0, 65541, 458751, 0, 65537, 393216, 0, 131072, 393217, 0, 131072, 393218, 0, 131072, 393219, 0, 65547, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196609, 393226, 0, 65543 )
