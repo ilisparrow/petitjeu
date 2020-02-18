@@ -116,7 +116,7 @@ position = Vector2( 2, 1 )
 shape = SubResource( 1 )
 
 [node name="10" type="Sprite" parent="."]
-position = Vector2( 194.468, 63.2503 )
+position = Vector2( -3.532, -1.7497 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -188,7 +188,7 @@ position = Vector2( 2, 1 )
 shape = SubResource( 1 )
 
 [node name="9" type="Sprite" parent="."]
-position = Vector2( 194.468, 130.426 )
+position = Vector2( -0.531998, 54.426 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
