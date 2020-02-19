@@ -12,6 +12,7 @@ var WIND=0
 var STEPWIND = 7
 var inertiaMainCaractere = 10
 var globalVar = 1
+var listNom=[]
 
 
 func _input(event):
@@ -70,20 +71,22 @@ func _physics_process(delta):
 			mouvement.y=-JUMP
 		if friction==true:
 			for body in bodies:
-				if body.name=="KinematicBody2D":
-					mouvement.x=lerp(mouvement.x,0,-0.24)
-					
-			#var kinematic_touche=false
-			#for i in range(len(bodies)):
-				#var colli=bodies[i]
-				#if colli.is_class("KinematicBody2D"):
-				#	kinematic_touche=true
-				#if kinematic_touche:
-					#mouvement.x=lerp(mouvement.x,0,-0.25)
-					#kinematic_touche=false
+				listNom.append(body.name)
+			print(listNom)
+			if 'KinematicBody2D' in listNom:
+				mouvement.x=lerp(mouvement.x,0,0)
+				listNom=[]
+			else:
+				mouvement.x=lerp(mouvement.x,0,0.1)
+				
+			#if 'RigideBody2D' in listNom:
+				
+			#	get_parent().get_node("RigidBody2D").friction=1
+			#else:
+			#	get_parent().get_node("RigidBody2D").friction=0
 	
-				else:
-					mouvement.x=lerp(mouvement.x,0,0.1)
+			#listNom=[]
+
 	elif is_on_ceiling()  :
 		if Input.is_action_just_pressed("ui_up"):#on utilise just_pressed pour le saut
 			mouvement.y=JUMP

@@ -22,7 +22,7 @@ extents = Vector2( 24.2632, 10 )
 [node name="jeux" type="Node"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 295.404, 539.43 )
+position = Vector2( 1149.89, 313.155 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 1081.47, 315.066 )
