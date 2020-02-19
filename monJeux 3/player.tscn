@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=13]
 [ext_resource path="res://Camera2D.gd" type="Script" id=14]
+[ext_resource path="res://TextureProgress.gd" type="Script" id=15]
+[ext_resource path="res://Sprites/bar1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/bar3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/bar4.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/fall2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/fall1.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,19 +28,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "jump",
 "speed": 10.0
 } ]
 
@@ -43,11 +49,30 @@ radius = 14.0
 height = 28.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 75.6604, 57.9827 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -28.1213
+margin_top = -50.7782
+margin_right = 99.8787
+margin_bottom = -18.7782
+value = 30.0
+texture_under = ExtResource( 16 )
+texture_over = ExtResource( 18 )
+texture_progress = ExtResource( 17 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "idle"
+animation = "fall"
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
